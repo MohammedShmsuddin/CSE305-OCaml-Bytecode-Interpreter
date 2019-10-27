@@ -1,0 +1,16 @@
+fun curried_add x
+fun lambda y
+pushn x
+pushn y
+add
+return
+funEnd
+pushn lambda
+return
+funEnd
+pushn curried_add
+pushi 10
+call
+pushi 12
+call
+quit

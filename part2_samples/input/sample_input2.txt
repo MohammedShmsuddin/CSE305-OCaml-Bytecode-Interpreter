@@ -1,0 +1,9 @@
+pushn a
+pushi 8
+pushi 10
+equal
+pushi 10
+pushi 100
+lessThan
+pushn name1
+quit

@@ -1,0 +1,119 @@
+fun add5 x
+pushn x
+pushi 5
+add
+return
+funEnd
+pop
+fun empty x
+push :error:
+return
+funEnd
+pop
+fun addToMap k
+fun lambda1 v
+fun lambda2 map
+fun lambda3 x
+fun retV x
+pushn v
+return
+funEnd
+pushn x
+pushn k
+equal
+pushn map
+pushn retV
+if
+pushn x
+call
+return
+funEnd
+pushn lambda3
+return
+funEnd
+pushn lambda2
+return
+funEnd
+pushn lambda1
+return
+funEnd
+pop
+fun removeFromMap k
+fun lambda1 map
+fun lambda2 x
+pushn x
+pushn k
+equal
+pushn map
+pushn empty
+if
+pushn x
+call
+return
+funEnd
+pushn lambda2
+return
+funEnd
+pushn lambda1
+return
+funEnd
+pop
+pushn addToMap
+pushi 1
+call
+pushs "One"
+call
+pushn empty
+call
+pushn addToMap
+pushi 2
+call
+pushs "NotTwo"
+call
+swap
+call
+pushn addToMap
+pushi 3
+call
+pushs "Three"
+call
+swap
+call
+pushn addToMap
+pushi 500
+call
+pushn add5
+call
+swap
+call
+pushn addToMap
+pushi 1
+call
+pushs "One but newer"
+call
+swap
+call
+pushn removeFromMap
+pushi 2
+call
+swap
+call
+pushn map
+swap
+bind
+pop
+pushn map
+pushi 3
+call
+pushn map
+pushi 2
+call
+pushn map
+pushi 1
+call
+pushn map
+pushi 500
+call
+pushi 3
+call
+quit

@@ -1,0 +1,23 @@
+fun add2 x
+pushn x
+pushi 2
+add
+return
+funEnd
+pushn z
+pushi 2
+bind
+fun twiceZ y
+pushn y
+pushn z
+call
+pushn y
+pushn z
+call
+add
+return
+funEnd
+pushn twiceZ
+pushn add1
+call
+quit

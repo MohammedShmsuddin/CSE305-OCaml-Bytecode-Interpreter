@@ -1,0 +1,15 @@
+pushi 50
+pushi 100
+div
+push :unit:
+push :error:
+add
+pushs "str1"
+pushn str1
+mul
+swap
+swap
+neg
+swap
+neg
+quit

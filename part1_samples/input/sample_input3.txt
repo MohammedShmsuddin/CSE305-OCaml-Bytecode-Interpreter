@@ -1,0 +1,6 @@
+pushi 2
+pushi 4
+pushi 16
+pop
+add
+quit

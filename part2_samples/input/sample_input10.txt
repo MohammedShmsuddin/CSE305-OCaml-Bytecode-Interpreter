@@ -1,0 +1,43 @@
+pushn a
+pushi 30
+pushn a
+pushi 7
+bind
+pop
+pushn a
+pushi 1
+rem
+pushi 5
+pushn a
+rem
+pushn a
+pushb :true:
+bind
+pushn a
+pushn a
+and
+pushn a
+or
+pushn a
+pushb :false:
+bind
+pushb :true:
+pushn a
+and
+pushn a
+or
+pushn bob
+pushs "Bob Vance "
+bind
+pushn fridge
+pushs "Vance Refrigeration"
+bind
+pushn bob
+pushn fridge
+cat
+let
+pushn fridge
+end
+pushs "."
+cat
+quit

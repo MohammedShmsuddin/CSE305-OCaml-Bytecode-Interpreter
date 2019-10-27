@@ -1,0 +1,29 @@
+pushn ocaml_code
+pushs "let x = List.fold_right (+) (List.map (fun x -> ( * ) x x) [0; 1; 2; 3; 4; 5]) 0"
+bind
+fun identity x
+pushn x
+return
+funEnd
+pushn identity
+pushn ocaml_code
+call
+pushn c
+pushn ocaml_code
+bind
+pushn ocaml_code
+swap
+bind
+pushn identity
+pushn ocaml_code
+call
+pushn identity
+pushn c
+call
+pushn identity
+push :error:
+call
+pushn identity
+push :unit:
+call
+quit

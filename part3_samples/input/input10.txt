@@ -1,0 +1,19 @@
+pushn x
+pushi 3
+bind
+fun addX arg
+pushn x
+pushn arg
+add
+return
+funEnd
+pushn x
+pushi 3
+bind
+pushn a
+pushi 5
+bind
+pushn addX
+pushn a
+call
+quit

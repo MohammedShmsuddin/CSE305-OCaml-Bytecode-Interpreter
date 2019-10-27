@@ -1,0 +1,26 @@
+let
+pushn y
+pushi 15
+bind
+inOutFun fun1 x
+pushn x
+pushn x
+pushn x
+add
+bind
+return
+funEnd
+pushn fun1
+pushn y
+call
+pushn y
+pushi 1
+add
+end
+pushn y
+pushi 15
+bind
+pushn fun1
+pushn y
+call
+quit

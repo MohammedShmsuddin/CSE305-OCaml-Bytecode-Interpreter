@@ -1,0 +1,7 @@
+pushn b
+pushi 8
+bind
+pushn a
+pushn b
+bind
+quit

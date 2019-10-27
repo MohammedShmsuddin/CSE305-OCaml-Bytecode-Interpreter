@@ -1,0 +1,14 @@
+pushi 2
+pushi 4
+pushi 6
+pushi 8
+pushi 10
+pushi 12
+mul
+mul
+mul
+mul
+mul
+div
+rem
+quit

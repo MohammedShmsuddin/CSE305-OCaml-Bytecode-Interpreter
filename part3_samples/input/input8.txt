@@ -1,0 +1,34 @@
+inOutFun always6 x
+pushn x
+pushi 6
+bind
+funEnd
+pop
+let
+pushn x
+pushi 1
+bind
+let
+pushn x
+pushi 2
+bind
+let
+pushn x
+pushi 3
+bind
+pushn always6
+pushn x
+call
+pushn x
+pushn x
+add
+end
+pushn x
+pushn x
+add
+end
+pushn x
+pushn x
+add
+end
+quit

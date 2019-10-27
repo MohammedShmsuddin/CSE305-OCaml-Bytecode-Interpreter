@@ -1,0 +1,10 @@
+:unit:
+:error:
+:error:
+identity
+let x = List.fold_right (+) (List.map (fun x -> ( * ) x x) [0; 1; 2; 3; 4; 5]) 0
+:unit:
+:unit:
+let x = List.fold_right (+) (List.map (fun x -> ( * ) x x) [0; 1; 2; 3; 4; 5]) 0
+:unit:
+:unit:

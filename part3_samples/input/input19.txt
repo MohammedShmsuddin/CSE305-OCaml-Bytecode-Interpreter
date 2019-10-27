@@ -1,0 +1,40 @@
+fun stop arg
+pushi 1
+return
+funEnd
+fun factorial arg
+pushn arg
+pushi 1
+sub
+pushi 1
+pushn arg
+equal
+pushn stop
+pushn factorial
+if
+swap
+call
+pushn arg
+mul
+return
+funEnd
+inOutFun newFact x
+pushn x
+pushn factorial
+pushn x
+call
+bind
+funEnd
+pushn a
+pushi 6
+bind
+pushn a
+neg
+neg
+pushn newFact
+pushn a
+call
+pushn a
+neg
+neg
+quit

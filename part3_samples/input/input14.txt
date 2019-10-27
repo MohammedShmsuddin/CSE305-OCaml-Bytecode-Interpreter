@@ -1,0 +1,14 @@
+fun triple x
+let
+pushn x
+pushn x
+pushn x
+add
+add
+end
+return
+funEnd
+pushn triple
+pushi 2
+call
+quit

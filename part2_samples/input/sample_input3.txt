@@ -1,0 +1,13 @@
+pushn c
+pushn a
+pushi 5
+bind
+pushn b
+pushi 10
+bind
+pushn a
+pushn b
+add
+pushi 3
+div
+quit

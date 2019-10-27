@@ -1,0 +1,22 @@
+fun F f
+pushb :false:
+return
+funEnd
+fun T t
+pushb :true:
+return
+funEnd
+fun choose a
+pushn a
+pushn T
+pushn F
+if
+return
+funEnd
+pushb :false:
+pushn choose
+pushb :true:
+call
+swap
+call
+quit

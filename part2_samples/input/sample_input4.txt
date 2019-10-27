@@ -1,0 +1,26 @@
+let
+pushi 51
+end
+pop
+let
+pushn c
+pushi 13
+bind
+let
+pushn a
+pushi 5
+bind
+pushn a
+pushn c
+add
+end
+let
+pushn b
+pushs "joker"
+bind
+end
+end
+pushi 40
+pushi 4
+rem
+quit

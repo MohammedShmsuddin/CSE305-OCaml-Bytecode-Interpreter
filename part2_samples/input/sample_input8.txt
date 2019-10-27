@@ -1,0 +1,13 @@
+pushn b
+pushi 3
+bind
+let
+pushn b
+pushi 5
+bind
+pushn b
+pushn b
+mul
+end
+push :unit:
+quit

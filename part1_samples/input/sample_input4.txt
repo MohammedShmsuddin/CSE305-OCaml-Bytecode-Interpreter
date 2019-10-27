@@ -1,0 +1,11 @@
+pop
+pushi 100
+swap
+pushi 60
+add
+pop
+pushi -12
+mul
+pushi 5
+swap
+quit

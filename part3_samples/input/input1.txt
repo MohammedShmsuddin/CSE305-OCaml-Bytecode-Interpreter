@@ -1,0 +1,31 @@
+fun expr1 b
+pushn b
+pushn b
+mul
+return
+funEnd
+
+
+
+fun expr2 a
+pushn c
+pushi 5
+bind
+pushi 4
+pushn a
+mul
+pushn c
+mul
+return
+funEnd
+
+
+
+pushn expr1
+pushi 9
+call
+pushn expr2
+pushi 2
+call
+sub
+quit

@@ -1,0 +1,13 @@
+pushn x
+let
+pushi 5
+pushi -12345
+add
+end
+let
+pushi 010
+pushi -13
+add
+end
+div
+quit

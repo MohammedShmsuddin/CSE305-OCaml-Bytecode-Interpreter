@@ -1,0 +1,28 @@
+fun retError x
+push :error:
+return
+funEnd
+pop
+let
+pushb :false:
+push :error:
+pushb :true:
+pushn retError
+push :error:
+call
+pop
+pop
+pop
+end
+let
+pushb :false:
+push :error:
+pushb :true:
+pushn retError
+push :unit:
+call
+pop
+pop
+pop
+end
+quit

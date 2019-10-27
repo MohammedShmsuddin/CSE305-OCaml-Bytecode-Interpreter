@@ -1,0 +1,33 @@
+pushi 4.0
+pushn a
+pushb :true:
+bind
+pushn b
+pushb :false:
+bind
+pushn c
+pushb :true:
+bind
+pushn d
+pushb :false:
+bind
+pushn a
+pushn c
+and
+pushn d
+or
+not
+pushn a
+and
+pushb :true:
+or
+pushi 10
+pushi 5
+if
+pushn e
+swap
+bind
+pushn e
+pushn e
+mul
+quit

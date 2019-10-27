@@ -1,0 +1,17 @@
+inOutFun always5 x
+pushn x
+pushi 5
+bind
+funEnd
+pop
+pushn a
+pushi 3
+bind
+pop
+pushn always5
+pushn a
+call
+pushn a
+pushn a
+add
+quit

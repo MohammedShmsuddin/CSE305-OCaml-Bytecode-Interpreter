@@ -1,0 +1,20 @@
+inOutFun sin theta
+pushn theta
+pushi 0
+pushn theta
+equal
+pushi 0
+pushi 1
+if
+bind
+funEnd
+pushn x
+pushi 90
+bind
+pushn sin
+pushn x
+call
+pushn x
+pushn x
+add
+quit

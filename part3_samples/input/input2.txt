@@ -1,0 +1,12 @@
+fun funA x
+pushs "Function A"
+return
+funEnd
+fun Dummy y
+pushs "dummy"
+funEnd
+pop
+pushn fun1
+swap
+call
+quit

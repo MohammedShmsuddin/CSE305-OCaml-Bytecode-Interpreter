@@ -1,0 +1,8 @@
+pushi 15
+pushb :false:
+pushb :true:
+pushs "a_string"
+pushn a_name
+push :unit:
+push :error:
+quit

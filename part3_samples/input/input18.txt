@@ -1,0 +1,33 @@
+pushn _no_function_here_
+push :unit:
+bind
+fun addY x
+pushs "oops"
+return
+funEnd
+pushn y
+pushi 5
+bind
+let
+pushn y
+pushi 7
+bind
+fun addY x
+let
+pushn x
+pushn y
+add
+end
+return
+funEnd
+pushn addY
+pushi 10
+call
+end
+pushn addY
+pushn y
+call
+pushn _no_function_here_
+swap
+call
+quit

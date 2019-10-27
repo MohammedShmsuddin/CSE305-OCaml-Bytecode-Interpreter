@@ -1,0 +1,41 @@
+pushn _global_1
+pushi 10
+pop
+pushi -40
+pop
+pushs " let's get small "
+pushs " steve martin  "
+cat
+pushn a
+pushi 3
+bind
+pushn b
+pushi 5
+bind
+pushn IsUnit
+swap
+bind
+pushn a
+pushn b
+mul
+pushi 11
+lessThan
+pushn FALSEmaybe
+swap
+bind
+pushn FALSEmaybe
+pushb :false:
+or
+pushs "FALSEmaybe is"
+pushn IsUnit
+pushi -151
+bind
+pop
+pushn IsUnit
+neg
+pushs " b e y o n d t h e p a l e   _ "
+pushs "Jimmothy Gaffigan"
+cat
+pushi 42
+pushi 23
+quit

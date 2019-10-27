@@ -1,0 +1,15 @@
+fun exp1 x
+pushs "Definition 2"
+return
+funEnd
+pushn exp1
+push :unit:
+call
+fun exp1 x
+pushs "Definition 1"
+return
+funEnd
+pushn exp1
+push :unit:
+call
+quit

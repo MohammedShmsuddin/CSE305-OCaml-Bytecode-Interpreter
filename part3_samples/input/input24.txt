@@ -1,0 +1,322 @@
+fun id x
+pushn x
+return
+funEnd
+pop
+fun curried_mul x
+fun lambda y
+pushn x
+pushn y
+mul
+return
+funEnd
+pushn lambda
+return
+funEnd
+pop
+fun fact n
+fun loop n
+fun lambda k
+pushn n_minus_1
+pushn n
+pushi 1
+sub
+bind
+pop
+fun Continuation unit
+pushn loop
+pushn n_minus_1
+call
+pushn curried_mul
+pushn n
+call
+call
+pushn k
+swap
+call
+return
+funEnd
+pop
+pushn n
+pushi 1
+add
+pushn n
+pushi 0
+equal
+pushn k
+pushn Continuation
+swap
+if
+swap
+call
+return
+funEnd
+pushn lambda
+return
+funEnd
+pushn loop
+pushn n
+call
+pushn id
+call
+return
+funEnd
+pop
+fun empty x
+push :error:
+return
+funEnd
+pop
+fun cons e
+fun lambda1 list
+fun lambda2 x
+fun callRest unit
+pushn list
+pushn x
+pushi 1
+sub
+call
+return
+funEnd
+fun retE unit
+pushn e
+return
+funEnd
+pushn x
+pushi 0
+equal
+pushn callRest
+pushn retE
+if
+push :unit:
+call
+return
+funEnd
+pushn lambda2
+return
+funEnd
+pushn lambda1
+return
+funEnd
+pop
+fun len list
+fun isLen n
+pushb :false:
+push :error:
+pushb :true:
+pushn empty
+pushn list
+pushn n
+call
+call
+pop
+pop
+pop
+return
+funEnd
+fun acc n
+fun retN x
+pushn n
+return
+funEnd
+pushn isLen
+pushn n
+call
+pushn acc
+pushn retN
+if
+pushn n
+pushi 1
+add
+call
+return
+funEnd
+pushn acc
+pushi 0
+call
+return
+funEnd
+pop
+fun map func
+fun lambda1 list
+pushn length
+pushn len
+pushn list
+call
+bind
+fun aux n
+fun retEmpty unit
+pushn empty
+return
+funEnd
+fun doRec n
+pushn cons
+pushn func
+pushn list
+pushn length
+pushn n
+pushi 1
+add
+sub
+call
+call
+call
+pushn aux
+pushn n
+call
+call
+return
+funEnd
+pushn n
+pushi 0
+equal
+pushn doRec
+pushn retEmpty
+if
+pushn n
+pushi 1
+sub
+call
+return
+funEnd
+pushn aux
+pushn length
+call
+return
+funEnd
+pushn lambda1
+return
+funEnd
+pop
+fun fold_right z
+fun lambda1 func
+fun lambda2 list
+pushn length
+pushn len
+pushn list
+call
+bind
+fun aux n
+fun retZ x
+pushn z
+return
+funEnd
+fun doRec n
+pushn func
+pushn list
+pushn length
+pushn n
+pushi 1
+add
+sub
+call
+call
+pushn aux
+pushn n
+call
+call
+return
+funEnd
+pushn n
+pushi 0
+equal
+pushn doRec
+pushn retZ
+if
+pushn n
+pushi 1
+sub
+call
+return
+funEnd
+pushn aux
+pushn length
+call
+return
+funEnd
+pushn lambda2
+return
+funEnd
+pushn lambda1
+return
+funEnd
+pop
+pushn cons
+pushn fact
+pushi 3
+call
+call
+pushn empty
+call
+pushn cons
+pushi 5
+call
+swap
+call
+pushn cons
+pushi 4
+call
+swap
+call
+pushn cons
+pushi 3
+call
+swap
+call
+pushn cons
+pushi 2
+call
+swap
+call
+pushn cons
+pushi 1
+call
+swap
+call
+pushn cons
+pushi 0
+call
+swap
+call
+pushn list
+swap
+bind
+pop
+fun square x
+pushn x
+pushn x
+mul
+return
+funEnd
+pop
+pushn map
+pushn square
+call
+pushn list
+call
+pushn mapped
+swap
+bind
+pop
+fun sum x
+fun lambda y
+pushn x
+pushn y
+add
+return
+funEnd
+pushn lambda
+return
+funEnd
+pop
+pushn fold_right
+pushi 0
+call
+pushn sum
+call
+pushn mapped
+call
+pushn fact
+pushi 10
+call
+quit

@@ -1,0 +1,21 @@
+pushn unused
+pushi -23
+bind
+pushi 100
+pushn n1
+swap
+bind
+let
+pushn n2
+pushn n1
+bind
+pushn n2
+neg
+neg
+end
+pushn n2
+neg
+pushn n1
+neg
+div
+quit

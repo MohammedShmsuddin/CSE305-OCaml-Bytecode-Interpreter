@@ -1,0 +1,306 @@
+fun makeTuple b
+fun lambda1 a
+fun lambda2 x
+pushn x
+pushi 0
+equal
+pushn x
+pushi 1
+equal
+push :error:
+pushn b
+if
+pushn a
+if
+return
+funEnd
+pushn lambda2
+return
+funEnd
+pushn lambda1
+return
+funEnd
+pop
+fun FROMN n
+fun thunk unit
+pushn FROMN
+pushn n
+pushi 1
+add
+call
+return
+funEnd
+pushn makeTuple
+pushn thunk
+call
+pushn n
+call
+return
+funEnd
+pop
+fun HD L
+pushn L
+pushi 0
+call
+return
+funEnd
+pop
+fun TL L
+pushn L
+pushi 1
+call
+push :unit:
+call
+return
+funEnd
+pop
+fun NTH L
+fun lambda1 n
+fun rec unit
+pushn NTH
+pushn TL
+pushn L
+call
+call
+pushn n
+pushi 1
+sub
+call
+return
+funEnd
+pushn n
+pushi 0
+equal
+pushn rec
+pushn HD
+if
+pushn L
+call
+return
+funEnd
+pushn lambda1
+return
+funEnd
+pop
+fun FIB n
+fun lambda1 m
+fun thunk unit
+pushn FIB
+pushn m
+call
+pushn n
+pushn m
+add
+call
+return
+funEnd
+pushn makeTuple
+pushn thunk
+call
+pushn n
+call
+return
+funEnd
+pushn lambda1
+return
+funEnd
+pop
+fun FILTER L
+fun lambda1 f
+fun thunk unit
+pushn FILTER
+pushn TL
+pushn L
+call
+call
+pushn f
+call
+return
+funEnd
+fun rec unit
+pushn makeTuple
+pushn thunk
+call
+pushn HD
+pushn L
+call
+call
+return
+funEnd
+pushn f
+pushn HD
+pushn L
+call
+call
+pushn thunk
+pushn rec
+if
+push :unit:
+call
+return
+funEnd
+pushn lambda1
+return
+funEnd
+pop
+fun ZIP B
+fun lambda1 A
+fun thunk unit
+pushn ZIP
+pushn TL
+pushn B
+call
+call
+pushn TL
+pushn A
+call
+call
+return
+funEnd
+pop
+pushn makeTuple
+pushn thunk
+call
+pushn makeTuple
+pushn HD
+pushn B
+call
+call
+pushn HD
+pushn A
+call
+call
+call
+return
+funEnd
+pushn lambda1
+return
+funEnd
+pop
+fun even n
+pushn n
+pushi 2
+rem
+pushi 0
+equal
+return
+funEnd
+pop
+fun odd n
+pushn n
+pushi 2
+rem
+pushi 1
+equal
+return
+funEnd
+pop
+fun SIFT L
+pushn a
+pushn HD
+pushn L
+call
+bind
+pop
+fun aux x
+pushi 0
+pushn x
+pushn a
+rem
+equal
+not
+return
+funEnd
+pop
+fun thunk unit
+pushn SIFT
+pushn FILTER
+pushn TL
+pushn L
+call
+call
+pushn aux
+call
+call
+return
+funEnd
+pop
+pushn makeTuple
+pushn thunk
+call
+pushn a
+call
+return
+funEnd
+pop
+pushn FIB
+pushi 0
+call
+pushi 1
+call
+pushn fibs
+swap
+bind
+pop
+pushn FILTER
+pushn fibs
+call
+pushn even
+call
+pushn evenFibs
+swap
+bind
+pop
+pushn FILTER
+pushn fibs
+call
+pushn odd
+call
+pushn oddFibs
+swap
+bind
+pop
+pushn NTH
+pushn ZIP
+pushn oddFibs
+call
+pushn evenFibs
+call
+call
+pushi 11
+call
+pushi 0
+call
+pushn NTH
+pushn FROMN
+pushi 11
+call
+call
+pushi 100
+call
+pushn NTH
+pushn SIFT
+pushn FROMN
+pushi 2
+call
+call
+call
+pushi 22
+call
+pushn NTH
+pushn evenFibs
+call
+pushi 11
+call
+pushn NTH
+pushn oddFibs
+call
+pushi 14
+call
+pushn even
+pushi 12
+call
+pushn odd
+pushi 5
+call
+quit
